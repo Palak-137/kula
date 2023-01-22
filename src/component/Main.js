@@ -89,7 +89,7 @@ function Main() {
             <div className='col'>
               <div ref={ref1} className="left-sidebox">
                 <div>
-                  <h4 className='small-heading'>{(data.texts !== undefined && data!== "" && data!==null) ? data.texts[0].subHeading:"Sub Heading" }</h4>
+                  <h2 className='small-heading'>{(data.texts !== undefined && data!== "" && data!==null) ? data.texts[0].subHeading:"Sub Heading" }</h2>
                   <h1 className='heading9'>{(data.texts !== undefined && data!== "" && data!==null)  ? data.texts[0].heading : "Sub Heading"}</h1>
                   <p className='text-size-medium-2'>{(data.texts !== undefined && data!== "" && data!==null)  ? data.texts[0].description : "Sub Heading"}</p>
                 </div>
