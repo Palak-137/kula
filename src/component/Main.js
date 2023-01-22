@@ -31,7 +31,7 @@ function useIsInViewport(ref) {
 
 function Main() {
     const [state, setState] = useState(sample1);
-    const [data, setData] = useState("");
+  const [data, setData] = useState({});
   
     const ref1 = useRef(null);
     const ref2 = useRef(null);
@@ -58,6 +58,7 @@ function Main() {
    // console.log("reuest data ",data);
 });
   }
+ 
   
     useEffect(() => {
    
@@ -72,10 +73,10 @@ function Main() {
     }
         //console.log(state);
     
-      //fetching the data from api
+      //fetching the data from api  
       fetchJson();
       console.log("data in main ", data)
-
+    
       
   }, [isInViewport1,isInViewport2,isInViewport3]);
 
@@ -88,9 +89,9 @@ function Main() {
             <div className='col'>
               <div ref={ref1} className="left-sidebox">
                 <div>
-                  <h4 className='small-heading'>{  data !== undefined || data!== "" || data!==null ? data.texts[0].subHeading:"Sub Heading" }</h4>
-                  <h1 className='heading9'>{data !== undefined || data !== "" || data!==null ? data.texts[0].heading : "Sub Heading"}</h1>
-                  <p className='text-size-medium-2'>{data !== undefined || data !== ""|| data!==null ? data.texts[0].description : "Sub Heading"}</p>
+                  <h4 className='small-heading'>{(data.texts !== undefined && data!== "" && data!==null) ? data.texts[0].subHeading:"Sub Heading" }</h4>
+                  <h1 className='heading9'>{(data.texts !== undefined && data!== "" && data!==null)  ? data.texts[0].heading : "Sub Heading"}</h1>
+                  <p className='text-size-medium-2'>{(data.texts !== undefined && data!== "" && data!==null)  ? data.texts[0].description : "Sub Heading"}</p>
                 </div>
                       
               </div>
@@ -105,9 +106,9 @@ function Main() {
             <div className='col'>
             <div ref={ref2} className="left-sidebox">
             <div>
-              <h4 className='small-heading'>{  data !== undefined || data!== "" || data!==null ? data.texts[1].subHeading:"Sub Heading" }</h4>
-                    <h1 className='heading9'>{data !== undefined || data !== "" || data!==null ? data.texts[1].heading : "Sub Heading"}</h1>
-                    <p className='text-size-medium-2'>{data !== undefined || data !== ""|| data!==null ? data.texts[1].description : "Sub Heading"}</p>
+              <h4 className='small-heading'>{  (data.texts !== undefined && data!== "" && data!==null) ? data.texts[1].subHeading:"Sub Heading" }</h4>
+                    <h1 className='heading9'>{(data.texts !== undefined && data!== "" && data!==null) ? data.texts[1].heading : "Sub Heading"}</h1>
+                    <p className='text-size-medium-2'>{(data.texts !== undefined && data!== "" && data!==null) ? data.texts[1].description : "Sub Heading"}</p>
                   </div>
               </div>
               <div className='col'>
@@ -121,9 +122,9 @@ function Main() {
             <div className='col'>
             <div ref={ref3} className="left-sidebox">
             <div>
-            <h4 className='small-heading'>{  data !== undefined || data!== "" || data!==null ? data.texts[2].subHeading:"Sub Heading" }</h4>
-                  <h1 className='heading9'>{data !== undefined || data !== "" || data!==null ? data.texts[2].heading : "Sub Heading"}</h1>
-                  <p className='text-size-medium-2'>{data !== undefined || data !== ""|| data!==null ? data.texts[2].description : "Sub Heading"}</p>
+            <h4 className='small-heading'>{  (data.texts !== undefined && data!== "" && data!==null) ? data.texts[2].subHeading:"Sub Heading" }</h4>
+                  <h1 className='heading9'>{(data.texts !== undefined && data!== "" && data!==null) ? data.texts[2].heading : "Sub Heading"}</h1>
+                  <p className='text-size-medium-2'>{(data.texts !== undefined && data!== "" && data!==null) ? data.texts[2].description : "Sub Heading"}</p>
                 </div>
               </div>
               <div className='col'>
